@@ -2,13 +2,12 @@
 
 docker build --no-cache -t python:latest .
 
-> mounting local volume
-
-docker volume create python
-docker run --name python -i -t -p 8080:8080 -v python:/workdir python
-
 > local nfs volumen
 
-docker run --name python -i -t -p 8080:8080 -v $(readlink -f /home/skuarch/Docker/volumes/python):/workdir python
+docker run --name python -i -t -p 8080:8080 -p 8888:8888 -p 9090:9090 -p 8181:8181 -p 22:22 -v $(readlink -f /home/skuarch/Docker/volumes/python):/workdir python
 
 > before create /home/skuarch/Docker/volumes/python directory
+
+
+sometimes is necesary to restart ssh server
+> service ssh restart
