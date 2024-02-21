@@ -34,4 +34,4 @@ EXPOSE 8080 8888 9090 8181 22
 
 VOLUME [ "/workdir" ]
 
-# CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/usr/sbin/sshd", "-D"]
